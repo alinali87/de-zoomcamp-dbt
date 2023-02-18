@@ -4,8 +4,8 @@ with tripdata as
 (
   select *,
     row_number() over(partition by vendorid, lpep_pickup_datetime 
-                        -- order by pulocationid, lpep_pickup_datetime, lpep_dropoff_datetime) 
-                        as rn
+                        -- order by pulocationid, lpep_pickup_datetime, lpep_dropoff_datetime
+                        ) as rn
   from {{ source('staging','green_tripdata') }}
   where vendorid is not null 
 )
