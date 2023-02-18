@@ -13,7 +13,7 @@ sources:
 
       # loaded_at_field: record_loaded_at
       tables:
-        # - name: fhv_tripdata
+        - name: fhv_partitoned_clustered
         - name: green_tripdata
         - name: yellow_tripdata
          # freshness:
