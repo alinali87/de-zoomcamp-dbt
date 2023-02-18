@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
-dim_zones as (
+with dim_zones as (
     select * from {{ ref('dim_zones') }}
     where borough != 'Unknown'
 )
