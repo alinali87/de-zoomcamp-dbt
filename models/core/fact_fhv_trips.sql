@@ -17,7 +17,7 @@ select
     dropoff_zone.zone as dropoff_zone,  
     t.sr_flag,
     t.affiliated_base_number
-from {{ source('staging','fhv_tripdata') }} as t
+from {{ ref('stg_fhv_tripdata') }} as t
 inner join dim_zones as pickup_zone
 on t.pickup_locationid = pickup_zone.locationid
 inner join dim_zones as dropoff_zone
